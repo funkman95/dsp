@@ -53,7 +53,7 @@ Explore these other [ls options](http://www.techonthenet.com/unix/basic/ls.php) 
 * `-F`: flags filenames and places a slash at the end of directories
 * `-R`: displays subdirectories as well
 * `-1`: displays each entry on a line
-* `gpot`: concise long listing sorted by time modified with slashes following directories
+* `-gpot`: concise long listing sorted by time modified with slashes following directories
 
 ---
 
