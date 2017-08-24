@@ -19,22 +19,29 @@ Here's a list of items with which you should be familiar:
 
 Make a cheat sheet for yourself: a list of at least **ten** commands and what they do.  (Use the 8 items above and add a couple of your own.)  
 
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
+* `pwd`: show current working directory path
+* `mkdir`: create a directory
+* `rm -R`: delete a directory
+* `touch`: create a file
+* `rm`: delete a file
+* `mv` [file] [new filename]: renaming a file
+* `ls -a`: listing hidden files
+* `cp` [file] [dir]: copying a file from one directory to another
+* `cd` [dir]: change directory
+* `grep` "string": search for text pattern
 
 ---
 
 ### Q2.  List Files in Unix   
 
 What do the following commands do:  
-`ls`  
-`ls -a`  
-`ls -l`  
-`ls -lh`  
-`ls -lah`  
-`ls -t`  
-`ls -Glp`  
-
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
+`ls`: short listing  
+`ls -a`: listing including hidden files  
+`ls -l`: long listing  
+`ls -lh`: long listing with human readable file sizes  
+`ls -lah`: long listing including hidden files with human readable file sizes  
+`ls -t`: listing sorted by time modified (most recent first)  
+`ls -Glp`: long listing without the owner's name and with a slash after each directory pathname  
 
 ---
 
@@ -42,7 +49,11 @@ What do the following commands do:
 
 Explore these other [ls options](http://www.techonthenet.com/unix/basic/ls.php) and pick 5 of your favorites:
 
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
+* `-d`: only displays directories
+* `-F`: flags filenames and places a slash at the end of directories
+* `-R`: displays subdirectories as well
+* `-1`: displays each entry on a line
+* `gpot`: concise long listing sorted by time modified with slashes following directories
 
 ---
 
@@ -50,7 +61,4 @@ Explore these other [ls options](http://www.techonthenet.com/unix/basic/ls.php) 
 
 What does `xargs` do? Give an example of how to use it.
 
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
-
- 
-
+> > `xargs` reads data from standard input and executes a command (given as an argument) however many times based on the input. The default command is `echo`. An example would be searching for files containing specific text or strings: `find . -name "*.txt" | xargs grep "string"`.
