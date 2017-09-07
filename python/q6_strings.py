@@ -1,6 +1,6 @@
 # Based on materials copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
-
+import re
 
 def donuts(count):
     """
@@ -18,7 +18,9 @@ def donuts(count):
     >>> donuts(99)
     'Number of donuts: many'
     """
-    raise NotImplementedError
+    if count > 9:
+        count = 'many'
+    return 'Number of donuts: {}'.format(count)
 
 
 def both_ends(s):
@@ -37,7 +39,10 @@ def both_ends(s):
     >>> both_ends('xyz')
     'xyyz'
     """
-    raise NotImplementedError
+    if len(s) < 3:
+        return ''
+    else:
+        return s[:2] + s[-2:]
 
 
 def fix_start(s):
@@ -56,7 +61,8 @@ def fix_start(s):
     >>> fix_start('donut')
     'donut'
     """
-    raise NotImplementedError
+    first = s[0]
+    return s[0] + s[1:].replace(first, '*')
 
 
 def mix_up(a, b):
@@ -74,7 +80,8 @@ def mix_up(a, b):
     >>> mix_up('pezzy', 'firm')
     'fizzy perm'
     """
-    raise NotImplementedError
+    return b[:2] + a[2:] + ' ' + a[:2] + b[2:]
+
 
 
 def verbing(s):
@@ -91,7 +98,14 @@ def verbing(s):
     >>> verbing('do')
     'do'
     """
-    raise NotImplementedError
+    if len(s) < 3:
+        return s
+    else:
+        if s[-3:] == 'ing':
+            return s + 'ly'
+        else:
+            return s + 'ing'
+
 
 
 def not_bad(s):
@@ -111,7 +125,23 @@ def not_bad(s):
     >>> not_bad("It's bad yet not")
     "It's bad yet not"
     """
-    raise NotImplementedError
+    if ' not ' in s and ' bad' in s:
+        index = [i.start() + 1 for i in re.finditer(' not', s)] + [i.start() + 1 for i in re.finditer(' bad', s)]
+        total = []
+        for i in index:
+            total.append((i, s[i]))
+        total = sorted(total, key=lambda x: x[0])
+
+        for i in range(len(total)):
+            if total[i][1] == 'n' and total[i+1][1] == 'b':
+                not_start = total[i][0]
+                not_stop = not_start + 4
+                bad_start = total[i+1][0]
+                bad_stop = bad_start + 3
+                return s[:not_start] + 'good' + s[bad_stop:]
+                break
+    else:
+        return s
 
 
 def front_back(a, b):
@@ -130,4 +160,6 @@ def front_back(a, b):
     >>> front_back('Kitten', 'Donut')
     'KitDontenut'
     """
-    raise NotImplementedError
+    half_a = (len(a) + 2 // 2) // 2
+    half_b = (len(b) + 2 // 2) // 2
+    return a[:half_a] + b[:half_b] + a[half_a:] + b[half_b:]
