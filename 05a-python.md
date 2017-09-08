@@ -29,14 +29,14 @@ How are Python lists and sets similar and different? Give examples of using both
 Describe Python's `lambda`. What is it, and what is it used for? Give at least one example, including an example of using a `lambda` in the `key` argument to `sorted`.
 
 >> The `lambda` operator is a quick way to create an anonymous function with the following syntax:  
-'''Python  
-`lambda` arguments: expression  
-'''  
+```Python
+`lambda` arguments: expression
+```
 Lambda functions can be used wherever function objects are required but are usually used in higher-order functions. The operator comes with `map()`, `filter()`, and `reduce()` built-in. An example using `sorted()`:  
-'''Python  
-d = [(25,3), (30,2), (22,1), (20,6), (33,0), (20, 9)]  
-sorted(d, key=lambda d: d[1])  
-'''  
+```Python
+d = [(25,3), (30,2), (22,1), (20,6), (33,0), (20, 9)]
+sorted(d, key=lambda d: d[1])
+```
 
 ---
 
@@ -45,19 +45,19 @@ sorted(d, key=lambda d: d[1])
 Explain list comprehensions. Give examples and show equivalents with `map` and `filter`. How do their capabilities compare? Also demonstrate set comprehensions and dictionary comprehensions.
 
 >> List comprehensions are easy, natural ways to create lists in Python. They take in expressions and iterate over a given range or list. An example of a list comprehension versus the `map()` and `filter()` functions:  
-'''Python
-list_comp = [x**2 for x in range(11) if x%2 == 0]  
-list_map = list(map(lambda x: x**2, range(11)))  
-list_filter = list(filter(lambda x: x%2 == 0, list_map))  
-'''  
+```Python
+list_comp = [x**2 for x in range(11) if x%2 == 0]
+list_map = list(map(lambda x: x**2, range(11)))
+list_filter = list(filter(lambda x: x%2 == 0, list_map))
+```
 When using `lambda`, `map()` and `filter()` are outperformed by list comprehensions because the `lambda` expression calls a function for each element while the list comprehension builds a list from a single loop. Additionally, list comprehensions appear to be more pythonic and intuitive.
 
 >>As for set and dictionary comprehensions, here are some examples:  
-'''Python
-import string  
-{k: v for (k, v) in zip(string.ascii_lowercase, range(26))} #alphabet index dictionary  
-{x**2 for x in range(-10,11)} #square set  
-'''  
+```Python
+import string
+{k: v for (k, v) in zip(string.ascii_lowercase, range(26))} #alphabet index dictionary
+{x**2 for x in range(-10,11)} #square set
+```
 
 
 ---
