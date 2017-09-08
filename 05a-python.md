@@ -32,7 +32,7 @@ Describe Python's `lambda`. What is it, and what is it used for? Give at least o
 ```Python
 `lambda` arguments: expression
 ```
-Lambda functions can be used wherever function objects are required but are usually used in higher-order functions. The operator comes with `map()`, `filter()`, and `reduce()` built-in. An example using `sorted()`:  
+>> Lambda functions can be used wherever function objects are required but are usually used in higher-order functions. The operator comes with `map()`, `filter()`, and `reduce()` built-in. An example using `sorted()`:  
 ```Python
 d = [(25,3), (30,2), (22,1), (20,6), (33,0), (20, 9)]
 sorted(d, key=lambda d: d[1])
@@ -50,9 +50,9 @@ list_comp = [x**2 for x in range(11) if x%2 == 0]
 list_map = list(map(lambda x: x**2, range(11)))
 list_filter = list(filter(lambda x: x%2 == 0, list_map))
 ```
-When using `lambda`, `map()` and `filter()` are outperformed by list comprehensions because the `lambda` expression calls a function for each element while the list comprehension builds a list from a single loop. Additionally, list comprehensions appear to be more pythonic and intuitive.
+>> When using `lambda`, `map()` and `filter()` are outperformed by list comprehensions because the `lambda` expression calls a function for each element while the list comprehension builds a list from a single loop. Additionally, list comprehensions appear to be more pythonic and intuitive.
 
->>As for set and dictionary comprehensions, here are some examples:  
+>> As for set and dictionary comprehensions, here are some examples:  
 ```Python
 import string
 {k: v for (k, v) in zip(string.ascii_lowercase, range(26))} #alphabet index dictionary
