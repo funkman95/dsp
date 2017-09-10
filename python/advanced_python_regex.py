@@ -1,6 +1,5 @@
 import csv
 import re
-from collections import Counter
 import string
 
 name = []
@@ -10,7 +9,7 @@ email = []
 
 with open('/Users/samfunk/ds/metis/metisgh/prework/dsp/python/faculty.csv', 'r') as f:
     reader = csv.reader(f)
-    header = next(reader)
+    next(reader)
     for row in reader:
         name.append(row[0])
         degree.append(row[1])
@@ -37,10 +36,7 @@ d = {x: degs.count(x) for x in degs}
 tls = []
 for i in title:
     prof = re.findall(r'(\w+)', i)[0]
-    if prof[0] == 'A':
-        tls.append(prof + ' Professor')
-    else:
-        tls.append(prof)
+    tls.append(prof.lower())
 t = {x: tls.count(x) for x in tls}
 
 #find different email domains
