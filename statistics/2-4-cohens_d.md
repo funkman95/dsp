@@ -1,8 +1,8 @@
 [Think Stats Chapter 2 Exercise 4](http://greenteapress.com/thinkstats2/html/thinkstats2003.html#toc24) (Cohen's d)
 
-Using the variable `totalwgt_lb`, investigate whether first babies are lighter or heavier than others. Compute Cohen's d to quantify the difference between the groups. How does it compare to the difference in pregnancy length?
+>> Using the variable `totalwgt_lb`, investigate whether first babies are lighter or heavier than others. Compute Cohen's d to quantify the difference between the groups. How does it compare to the difference in pregnancy length?
 
->> On average, first babies are about 1.7% lighter than all other babies. Using Cohen's d, this difference is about 0.0887 standard deviations, which is a fairly small effect size.
+On average, first babies are about 1.7% lighter than all other babies. Using Cohen's d, this difference is about 0.0887 standard deviations, which is a fairly small effect size.
 The difference for pregnancy length is much smaller. First babies are 0.2% longer than all others, on average. The Cohen d is 0.0289 standard deviations, which a very small effect size.
 The effect size for both variables are small and significant differences would be hard to detect.
 
