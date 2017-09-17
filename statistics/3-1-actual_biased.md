@@ -8,10 +8,10 @@ Now compute the biased distribution we would see if we surveyed the children and
 Plot the actual and biased distributions, and compute their means. As a starting place, you can use `chap03ex.ipynb`.
 
 **Actual Distribution for the number of children under 18 in the household**
-![Actual](https://github.com/funkman95/img/actual.pdf)
+![Actual](https://github.com/funkman95/dsp/img/actual.pdf)
 
 **Actual vs. Biased Distribution for the number of children under 18 in the household**
-![Actual vs Biased](https://github.com/funkman95/img/biased.pdf)
+![Actual vs Biased](https://github.com/funkman95/dsp/img/biased.pdf)
 
 Actual mean: 1.02420515504
 Biased mean: 2.40367910066
