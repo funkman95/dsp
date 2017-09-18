@@ -86,14 +86,32 @@ Bayes' Theorem is an important tool in understanding what we really know, given 
 
 Elvis Presley had a twin brother who died at birth.  What is the probability that Elvis was an identical twin? Assume we observe the following probabilities in the population: fraternal twin is 1/125 and identical twin is 1/300.  
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+**Probability Elvis was an identical twin = 5/11 (P(I|B) = 0.454545)**
+
+```Python
+frat = 1/125    #fraternal twins, F
+iden = 1/300    #identical twins, I
+boy = 1/2       #equal number boy/girl births, B
+
+#Want probability for identical twin brothers given Elvis had a twin brother
+#P(identical | twin brothers) = P(I|B)
+
+p_BF = boy * boy    #P(twin boys | fraternal twins)
+p_BI = boy          #P(twin boys | identical twins)
+
+#P(I|B) = (P(B|I) * P(I)) / P(B)
+#P(B)) = P(B|I)*P(I) + P(B|F)P(F)
+
+p_IB = (p_BI*iden) / ((p_BI*iden) + (p_BF*frat))
+print('P(I|B) = {}'.format(round(p_IB, 4)))
+```
 
 ---
 
 ### Q6. Bayesian &amp; Frequentist Comparison  
 How do frequentist and Bayesian statistics compare?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> Bayesian statistics uses probability distributions for both hypothesies and data while frequentist statistics never gives probability of a hypothesis but uses conditional distributions instead. Bayesian depends on the prior (P(H)) and likelihood (P(D|H)) of observed data. Frequentist depends on the likelihood (P(D|H)) for both observed and unobserved data. Bayesian requires a known or constructed 'subjective' prior while frequentist requires neither. Frequentist statistics use values such as p-values and confidence intervals. Bayesian uses integration over parameters and their probabilities. Bayesian tends to be more computationally intensive and dominated statistics before the 20th century. Frequentist is less computationally intensive and dominated staistics during the 20th century.
 
 ---
 
